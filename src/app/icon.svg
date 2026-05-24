@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#ffe7b0"/>
+      <stop offset="46%" stop-color="#f4c25a"/>
+      <stop offset="100%" stop-color="#9d8bf0"/>
+    </radialGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0c0a1c"/>
+  <!-- bodhi leaf: a rounded heart tapering to a drip-tip — the tree of awakening -->
+  <path d="M16 6 C 11 9 7.5 13 7.5 17.2 C 7.5 21.2 11 23.6 14.6 23.9 L 16 27 L 17.4 23.9 C 21 23.6 24.5 21.2 24.5 17.2 C 24.5 13 21 9 16 6 Z"
+        fill="none" stroke="url(#g)" stroke-width="1.7" stroke-linejoin="round"/>
+  <!-- central vein -->
+  <line x1="16" y1="9" x2="16" y2="23" stroke="#ffd584" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- the glowing seed of awareness -->
+  <circle cx="16" cy="16.2" r="1.9" fill="#ffe7b0"/>
+</svg>

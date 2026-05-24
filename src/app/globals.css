@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #070611;
+  --bodhi: #f4c25a;
+  --lotus: #ef84b1;
+  --jade: #4fd6c0;
+  --amethyst: #9d8bf0;
+  --ember: #e0664f;
+  --bone: #fbf6ee;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+  color: var(--bone);
+}
+
+body {
+  background-color: #060510;
+  background-image:
+    radial-gradient(ellipse 1200px 680px at 14% -8%, rgba(244, 194, 90, 0.14), transparent 60%),
+    radial-gradient(ellipse 1000px 560px at 86% 0%, rgba(157, 139, 240, 0.13), transparent 62%),
+    radial-gradient(ellipse 1100px 640px at 84% 98%, rgba(79, 214, 192, 0.10), transparent 60%),
+    radial-gradient(ellipse 1000px 560px at 12% 112%, rgba(239, 132, 177, 0.10), transparent 60%);
+  font-family: "Newsreader", ui-serif, Georgia, serif;
+  letter-spacing: 0.004em;
+}
+
+::selection {
+  background: rgba(244, 194, 90, 0.35);
+  color: #fff7e6;
+}
+
+/* ---------- type ---------- */
+.display { font-family: "Cormorant Garamond", ui-serif, Georgia, serif; font-weight: 500; }
+.zh { font-family: "Noto Serif SC", serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.64rem;
+  color: #ffd584;
+}
+
+/* ---------- luminous text ---------- */
+.glow-text {
+  color: #ffe7b0;
+  text-shadow: 0 0 18px rgba(244, 194, 90, 0.6), 0 0 54px rgba(157, 139, 240, 0.3);
+}
+.bodhi-text {
+  color: #ffe7b0;
+  text-shadow: 0 0 18px rgba(244, 194, 90, 0.55);
+}
+.lotus-text {
+  color: #fbcadd;
+  text-shadow: 0 0 18px rgba(239, 132, 177, 0.55);
+}
+.jade-text {
+  color: #aeefe4;
+  text-shadow: 0 0 18px rgba(79, 214, 192, 0.5);
+}
+.amethyst-text {
+  color: #d4cbfb;
+  text-shadow: 0 0 18px rgba(157, 139, 240, 0.55);
+}
+.ember-text {
+  color: #f2aa9b;
+  text-shadow: 0 0 18px rgba(224, 102, 79, 0.5);
+}
+
+/* ---------- translucent meditative card ---------- */
+.card {
+  background: linear-gradient(160deg, rgba(29, 25, 56, 0.82), rgba(12, 10, 28, 0.9));
+  border: 1px solid rgba(244, 194, 90, 0.14);
+  backdrop-filter: blur(7px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+.card:hover { border-color: rgba(244, 194, 90, 0.34); }
+
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 194, 90, 0.5) 18%, rgba(239, 132, 177, 0.44) 50%, rgba(157, 139, 240, 0.42) 82%, transparent);
+}
+
+/* ---------- breathing interface ---------- */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.72; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.breathe { animation: breathe 7s ease-in-out infinite; }
+
+/* slow meditative breath for whole panels */
+@keyframes breatheSoft {
+  0%, 100% { opacity: 0.85; filter: brightness(0.96); }
+  50% { opacity: 1; filter: brightness(1.06); }
+}
+.breathe-soft { animation: breatheSoft 9s ease-in-out infinite; }
+
+@keyframes glowpulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.glow-pulse { animation: glowpulse 3.2s ease-in-out infinite; }
+
+/* pulsing svg nodes — like a slow heartbeat */
+@keyframes nodepulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.node-pulse { animation: nodepulse 2.8s ease-in-out infinite; }
+
+/* a slow turning — the dharma wheel, the cycle of return */
+@keyframes turn { to { transform: rotate(360deg); } }
+.turn-slow { animation: turn 80s linear infinite; }
+
+/* flowing dashed stroke — release travelling along a path */
+@keyframes flow { to { stroke-dashoffset: -40; } }
+.flow { stroke-dasharray: 5 7; animation: flow 1.8s linear infinite; }
+
+/* rise in */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: riseIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* travelling spark along a path (offset-path set inline) */
+@keyframes spark {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* slow drift for soft rising particles — incense, breath, release */
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  14% { opacity: 0.7; }
+  100% { transform: translateY(-70px) translateX(24px); opacity: 0; }
+}
+
+::-webkit-scrollbar { width: 10px; background: #060510; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2a2550, #141128);
+  border-radius: 5px;
+}
+
+/* language fade on toggle */
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+/* range input — bodhi gold */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(244, 194, 90, 0.22);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffd584;
+  box-shadow: 0 0 12px rgba(244, 194, 90, 0.8);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #ffd584;
+  box-shadow: 0 0 12px rgba(244, 194, 90, 0.8);
+  cursor: pointer;
+}
